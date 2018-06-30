@@ -70,3 +70,7 @@ void Object::addPair(const Pair* pair){
 void Object::removePair(){
 
 }
+
+Value* Object::clone() const {
+    return new Object(*this);
+}

@@ -16,6 +16,8 @@ public:
     //Check the validity of this
     void removePair();
 
+    virtual Value* clone() const override;
+
 private:
     void resize();
     void free();

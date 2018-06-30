@@ -19,6 +19,10 @@ int main(int argc, char* argv[]) {
 
 	cout << "Hello fucking world :)" << endl;
 
+	JsonParser parser(argv[1]);
+
+	cout << endl << "Heloooo" << endl;
+
 	//Dank memes melt steal beans
 
 	return 0;

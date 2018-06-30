@@ -5,7 +5,7 @@
 
 class BoolValue: public Value {
 public:
-    BoolValue(const bool* var);
+    BoolValue(const bool var);
     BoolValue(const BoolValue& rhs);
     BoolValue& operator=(const BoolValue& rhs);
     ~BoolValue();

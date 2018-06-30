@@ -4,6 +4,7 @@
 #include "Value.h"
 
 class NullValue : public Value {
+public:
     NullValue();
     NullValue(const NullValue& rhs);
     //NullValue& operator=(const NullValue& rhs);

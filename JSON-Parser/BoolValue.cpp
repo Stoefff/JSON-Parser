@@ -1,6 +1,6 @@
 #include "BoolValue.h"
 
-BoolValue::BoolValue(const bool* var)
+BoolValue::BoolValue(const bool var)
     :var(var){
 }
 
