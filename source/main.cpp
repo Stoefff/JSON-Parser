@@ -1,9 +1,5 @@
 #include "iostream"
 
-using std::cout;
-using std::cin;
-using std::endl;
-
 #include "Value.h"
 #include "Array.h"
 #include "BoolValue.h"
@@ -15,15 +11,17 @@ using std::endl;
 #include "String.h"
 #include "Value.h"
 
+#include <fstream>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::ios;
+
 int main(int argc, char* argv[]) {
 
-	cout << "Hello fucking world :)" << endl;
-
 	JsonParser parser(argv[1]);
-
-	cout << endl << "Heloooo" << endl;
-
-	//Dank memes melt steal beans
+	parser.run();
 
 	return 0;
 }

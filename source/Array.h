@@ -13,8 +13,13 @@ public:
     void addElement(const Value* val);
     //Clear this!
     void removeElement();
+	Value* operator[](size_t pos);
 
     virtual Value* clone() const override;
+	virtual void printContent(int dept, ostream& stream) const override;
+	virtual void printCompactContent(ostream& stream) const override;
+	virtual Value* searchPath(char** keys, int dept,
+		int maxDept) const override;
 
 private:
     void resize();

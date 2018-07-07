@@ -13,5 +13,6 @@
             "type": "integer"
         }
     },
-    "required": ["firstName", "lastName"]
+    "required": ["firstName"
+    , "lastName"]
 }

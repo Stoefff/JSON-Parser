@@ -1,6 +1,8 @@
 #include "Array.h"
 #include <iostream>
 
+using std::cout;
+
 Array::Array()
     :arr(nullptr)
     ,size(0)
@@ -72,4 +74,42 @@ void Array::removeElement(){
 
 Value* Array::clone() const {
     return new Array(*this);
+}
+
+void Array::printContent(int dept, ostream& stream) const {
+	char* tabs = getTabs(dept);
+	stream << '['<< '\n';
+	for (int i = 0; i < size; i++) {
+		stream << tabs;
+		arr[i]->printContent(dept+1, stream);
+		if (i != size - 1) {
+			stream << ',' << '\n';
+		}
+		else {
+			stream << '\n';
+		}
+	}
+	tabs = getTabs(dept - 1);
+	stream << tabs << ']';
+	delete[] tabs;
+}
+
+Value* Array::operator[](size_t pos) {
+	return (pos >= size) ? nullptr : arr[pos];
+}
+
+void Array::printCompactContent(ostream& stream) const {
+	stream << '[';
+	for (int i = 0; i < size; i++) {
+		arr[i]->printCompactContent(stream);
+		if (i != size - 1) {
+			stream << ',';
+		}
+	}
+	stream << ']';
+}
+
+Value* Array::searchPath(char** keys, int dept,
+	int maxDept) const {
+	return nullptr;
 }

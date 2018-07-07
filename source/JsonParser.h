@@ -18,11 +18,14 @@ public:
     JsonParser& operator=(const JsonParser& rhs);
     ~JsonParser();
 
-    //void run();
+    void run();
 
 private:
     void free();
     void copy(const JsonParser& rhs);
+
+	void printPrettyJson(ostream& stream);
+	void printCompactJson(ostream& stream);
 
     char* getJsonString(const char* filename);
     int getFileSize(const char* filename);
@@ -35,6 +38,9 @@ private:
     NullValue* parseNullValue(char*& str);
     Number* parseNumber(char*& str);
     Value* parseValue(char*& str);
+	char** parseKeyPath(char* keyPath, int& size);
+
+	bool isWhiteSpace(char s);
 
 private:
     Object* obj;
